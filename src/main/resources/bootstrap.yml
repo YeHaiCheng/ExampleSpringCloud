@@ -1,0 +1,13 @@
+#配置应用名称和分布式时，该微服务在哪个ConfigureServer加载自己的配置文件（根据自己的应用名）
+spring:
+  application:
+    name: neusoftYEH
+      cloud:    config:      uri:      - http://localhost:9999
+      
+#IP注册服务给EurekaServer
+eureka: 
+  instance:
+    prefer-ip-address: true   #以IP注册为主， 不以主机名注册微服务
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
